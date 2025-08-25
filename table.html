@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Book Exchange - Available Books</title>
+  <style>
+    :root {
+      --brand: #0e6a8e;     /* header blue */
+      --sidebar: #f3f5f7;   /* sidebar bg */
+      --text: #1f2937;      /* dark gray */
+      --muted: #6b7280;     /* muted gray */
+      --link: #145fa3;      /* link blue */
+      --border: #d1d5db;    /* light border */
+      --focus: #2563eb;     /* focus ring */
+      --thead: #0b5f7f;     /* table header */
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color: var(--text); background: #ffffff; }
+
+    header { background: var(--brand); color: #fff; padding: 18px 24px; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+    .brand { display: flex; align-items: center; gap: 12px; max-width: 1200px; margin: 0 auto; font-weight: 700; font-size: 28px; }
+    .brand .logo { font-size: 28px; }
+
+    .wrap { display: grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - 64px); max-width: 1200px; margin: 0 auto; width: 100%; }
+
+    nav { background: var(--sidebar); border-right: 1px solid var(--border); padding: 18px 12px; }
+    .menu { list-style: none; padding: 0; margin: 0; }
+    .menu li { margin: 6px 0; }
+    .menu a { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--link); background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; }
+    .menu a:hover { background: #f9fafb; }
+    .menu a .ico { width: 18px; text-align: center; }
+    .menu a.active { background: #eef6ff; border-color: #bfdbfe; color: #0b4a8b; font-weight: 600; }
+
+    main { padding: 24px 28px; }
+    h1 { font-size: 24px; margin: 0 0 12px; }
+    p.lead { margin: 0 0 18px; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); }
+    thead th { background: var(--thead); color: #fff; text-align: left; font-weight: 600; padding: 10px 12px; }
+    tbody td { padding: 10px 12px; border-top: 1px solid var(--border); }
+    tbody tr:nth-child(even) { background: #fafafa; }
+
+    @media (max-width: 760px) { .wrap{ grid-template-columns: 1fr; } nav{ border-right:0; border-bottom:1px solid var(--border);} table{ display:block; overflow-x:auto; white-space:nowrap; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo">📚</span><span>Campus Book Exchange</span></div>
+  </header>
+
+  <div class="wrap">
+    <nav aria-label="Sidebar">
+      <ul class="menu">
+        <li><a class="" href="#"><span class="ico">🏠</span> Home</a></li>
+        <li><a class="active" href="#"><span class="ico">📖</span> Available Books</a></li>
+        <li><a href="#"><span class="ico">➕</span> Post a Book</a></li>
+        <li><a href="#"><span class="ico">📬</span> Request a Book</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Available Books</h1>
+      <p class="lead">Here is a list of currently available books shared by other students:</p>
+
+      <table aria-label="Available books table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Condition</th>
+            <th>Posted By</th>
+            <th>Contact Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operating Systems</td>
+            <td>Silberschatz</td>
+            <td>Good</td>
+            <td>Rajitha</td>
+            <td><a href="mailto:rajitha@example.com">rajitha@example.com</a></td>
+          </tr>
+          <tr>
+            <td>Intro to Algorithms</td>
+            <td>Cormen</td>
+            <td>Almost New</td>
+            <td>Sanduni</td>
+            <td><a href="mailto:sanduni@example.com">sanduni@example.com</a></td>
+          </tr>
+          <tr>
+            <td>Computer Networks</td>
+            <td>Tanenbaum</td>
+            <td>Used</td>
+            <td>Nimesh</td>
+            <td><a href="mailto:nimesh@example.com">nimesh@example.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>
